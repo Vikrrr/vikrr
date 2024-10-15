@@ -10,88 +10,90 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style1.css" />
   </head>
   <body>
-    <nav class="nav_1" style="background-color: antiquewhite">
-      <div class="container text-center">
-        <div class="row">
-          <div class="col" style="padding: 0px+">
-            <a href="https://vikrrr.github.io/vikrr/" target="_self"
-              ><img src="logo.png" alt="logo" height="50px" width="50px"
-            /></a>
-          </div>
-          <div class="col" style="padding-top: 12px; padding-bottom: 12px">
-            <span style="font-size: 20px; font-weight: bold">Vikrr</span>
-          </div>
-          <div class="col-8"></div>
-          <div
-            class="col"
-            style="
-              padding-top: 12px;
-              padding-bottom: 12px;
-              font-size: 20px;
-              font-weight: bold;
-              color: ;
-            "
-          >
-            <a
-              href="vikrr.html"
-              target="_self"
-              style="text-decoration: none; color: rgb(255, 136, 0)"
-              >Login</a
-            >
-          </div>
-          <div
-            class="col"
-            style="
-              padding-top: 12px;
-              padding-bottom: 12px;
-              font-size: 20px;
-              font-weight: bold;
-            "
-          >
-            <a
-              href="vikrr.html"
-              target="_self"
-              style="text-decoration: none; color: rgb(255, 136, 0)"
-              >Chat</a
-            >
-          </div>
-          <div
-            class="col"
-            style="
-              padding-top: 12px;
-              padding-bottom: 12px;
-              font-size: 20px;
-              font-weight: bold;
-            "
-          >
-            <a href="vikrr.html" target="_self" style="text-decoration: none"
-              >&#xF4E1;</a
-            >
-          </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="vikrr.html">
+          <img src="logo.png" alt="logo" height="50px" width="50px" />
+        </a>
+        <span style="color: rgb(255, 136, 0); font-weight: bolder">Vikrr</span>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="vikrr.html"
+                style="
+                  font-size: 20px;
+                  font-weight: bold;
+                  color: rgb(255, 136, 0);
+                "
+                >Login</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="vikrr.html"
+                style="
+                  font-size: 20px;
+                  font-weight: bold;
+                  color: rgb(255, 136, 0);
+                "
+                >Chat</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="vikrr.html"
+                style="font-size: 20px; font-weight: bold"
+                >&#xF4E1;</a
+              >
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
-    <div class="slider-frame">
-      <div class="slide-images">
-              <div class="img-container">
-                  <img src="img.jpg">
-              </div>
-              <div class="img-container">
-                  <img src="img.jpg">
-              </div>
-              <div class="img-container">
-                  <img src="img.jpg">
-              </div>
-      </div>
-  </div>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img.jpg" class="d-block w-100" alt="Image 1" height="250px">
+            </div>
+            <div class="carousel-item">
+                <img src="img.jpg" class="d-block w-100" alt="Image 2" height="250px">
+            </div>
+            <div class="carousel-item">
+                <img src="img.jpg" class="d-block w-100" alt="Image 3" height="250px">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
   </body>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"
-  ></script>
 </html>
-
