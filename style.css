@@ -9,4 +9,49 @@
       height: 150px; /* Height for mobile */
   }
 }
-
+.category {
+    display: flex;
+    flex-wrap: nowrap; /* Ensure all items are on the same row */
+    justify-content: space-evenly;
+    padding: 20px;
+    overflow-x: auto; /* Allow horizontal scrolling if necessary on small screens */
+  }
+  
+  .cat {
+    background-color: antiquewhite;
+    border-radius: 50%;
+    height: 125px;
+    width: 125px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    flex-shrink: 0; /* Prevent the items from shrinking */
+  }
+  
+  .cat img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .cat {
+      height: 100px;
+      width: 100px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .category {
+      flex-wrap: nowrap; /* Keep the circles in one row */
+    }
+    .cat {
+      height: 80px;
+      width: 80px;
+      margin: 5px;
+    }
+  }
+  
