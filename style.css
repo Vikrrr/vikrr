@@ -1,1 +1,12 @@
+.carousel-item img {
+  height: 200px; /* Height for PC */
+   /* Ensures the image covers the entire area */
+}
+
+/* Responsive height for mobile */
+@media (max-width: 576px) {
+  .carousel-item img {
+      height: 150px; /* Height for mobile */
+  }
+}
 
