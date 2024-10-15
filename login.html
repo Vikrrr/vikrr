@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up / Sign In |vikrr</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-box">
+        <div class="logo">
+          <img src="logo.png" alt="Logo" />
+        </div>
+
+        <!-- Sign In Form -->
+        <div class="form login-form">
+          <h2>Sign in to Vikrr</h2>
+          <form action="/login" method="POST">
+            <div class="input-group">
+              <label for="username">Username or email address</label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Enter your username or email"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                required
+              />
+            </div>
+            <div class="actions">
+              <button type="submit" class="btn">Sign in for Vikrr</button>
+            </div>
+            <p class="redirect">
+              New to Vikrr?
+              <a href="#" id="switch-to-signup">Create an account</a>.
+            </p>
+          </form>
+        </div>
+
+        <!-- Sign Up Form -->
+        <div class="form signup-form hidden">
+          <h2>Create your account</h2>
+          <form action="/signup" method="POST">
+            <div class="input-group">
+              <label for="email">Email address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your @rvce.edu.in email"
+                required
+              />
+              <small id="email-error" class="hidden" style="color: red"
+                >Please use your @rvce.edu.in email.</small
+              >
+            </div>
+
+            <!-- Auto-populated username based on email -->
+            <div class="input-group">
+              <label for="username">Username</label>
+              <input
+                type="text"
+                id="new-username"
+                name="new-username"
+                readonly
+                required
+              />
+            </div>
+
+            <div class="input-group">
+              <label for="mobile">Mobile Number:</label>
+              <input
+                type="tel"
+                id="mobile"
+                name="mobile"
+                pattern="[0-9]{10}"
+                required
+              />
+            </div>
+
+            <!-- Hosteler / Day Scholar Selection -->
+            <div class="input-group">
+              <label for="status">Are you a hosteler or a day scholar?</label>
+              <select id="status" name="status" required>
+                <option value="" disabled selected>Select one</option>
+                <option value="hosteler">Hosteler</option>
+                <option value="dayscholar">Day Scholar</option>
+              </select>
+            </div>
+
+            <!-- Hostel Selection (Hidden by Default) -->
+            <div class="input-group hidden" id="hostel-group">
+              <label for="hostel">Select your hostel</label>
+              <select id="hostel" name="hostel">
+                <option value="" disabled selected>Select your hostel</option>
+                <option value="Hostel A">Cauvery</option>
+                <option value="Hostel B">Krishna</option>
+                <option value="Hostel C">Chamundi</option>
+                <option value="Hostel D">Sir MV</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                id="new-password"
+                name="new-password"
+                placeholder="Enter a password"
+                required
+              />
+            </div>
+
+            <!-- Re-enter Password (Hidden Initially) -->
+            <div class="input-group hidden" id="reenter-password-group">
+              <label for="reenter-password">Re-enter Password</label>
+              <input
+                type="password"
+                id="reenter-password"
+                name="reenter-password"
+                placeholder="Re-enter your password"
+                required
+              />
+            </div>
+
+            <div class="terms">
+              <p>
+                By clicking "Sign up for Vikrr", you agree to our
+                <a href="#">terms of service</a> and
+                <a href="#">privacy policy</a>. We'll occasionally send you
+                account-related emails.
+              </p>
+            </div>
+
+            <div class="actions">
+              <button type="submit" class="btn" id="signup-btn" disabled>
+                Sign up for Vikrr
+              </button>
+            </div>
+
+            <p class="redirect">
+              Already have an account?
+              <a href="#" id="switch-to-login">Sign in</a>.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="login.js"></script>
+  </body>
+</html>
