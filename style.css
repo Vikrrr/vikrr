@@ -1,57 +1,158 @@
-.carousel-item img {
-  height: 200px; /* Height for PC */
-   /* Ensures the image covers the entire area */
-}
-
-/* Responsive height for mobile */
-@media (max-width: 576px) {
-  .carousel-item img {
-      height: 150px; /* Height for mobile */
-  }
-}
-.category {
-    display: flex;
-    flex-wrap: nowrap; /* Ensure all items are on the same row */
-    justify-content: space-evenly;
-    padding: 20px;
-    overflow-x: auto; /* Allow horizontal scrolling if necessary on small screens */
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
   }
   
-  .cat {
-    background-color: antiquewhite;
-    border-radius: 50%;
-    height: 125px;
-    width: 125px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
-    flex-shrink: 0; /* Prevent the items from shrinking */
+  .navbar-nav li a {
+    font-size: 20px;
+    font-weight: bold;
   }
   
-  .cat img {
-    border-radius: 50%;
+  /* Sidebar for mobile view (hamburger) */
+  #sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    background-color: #f8f9fa;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.3s ease;
+    padding-top: 60px;
+    height: auto;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+  
+  #sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #sidebar ul li {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  #sidebar ul li a {
+    color: #ff8800;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  #sidebar ul li a i {
+    margin-right: 10px; /* Add spacing between icon and text */
+  }
+  
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
   }
   
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
+  /* Media Query for mobile */
+  @media (max-width: 999px) {
+    .navbar-collapse {
+      display: none;
+    }
+  
+    #hamburger {
+      display: block;
+      z-index: 2;
+    }
+  
+    #sidebar {
+      z-index: 3;
+    }
+  
+    /* Show icons only in the hamburger menu */
+    #sidebar ul li a i {
+      display: inline;
+    }
+  }
+  
+  @media (min-width: 1000px) {
+    #hamburger {
+      display: none;
+    }
+  
+    .navbar-collapse {
+      display: flex !important;
+    }
+  
+    #sidebar {
+      display: none;
+    }
+  
+    /* Hide icons for Login and Chat in desktop */
+    .navbar-nav li a i {
+      display: none;
+    }
+  
+    /* Show only the Profile icon in desktop */
+    .navbar-nav li:last-child a i {
+      display: inline;
+    }
+  }
+  
+  .carousel-item img {
+    height: 200px; /* Height for PC */
+     /* Ensures the image covers the entire area */
+  }
+  
+  /* Responsive height for mobile */
+  @media (max-width: 576px) {
+    .carousel-item img {
+        height: 150px; /* Height for mobile */
+    }
+  }
+  .category {
+      display: flex;
+      flex-wrap: nowrap; /* Ensure all items are on the same row */
+      justify-content: space-evenly;
+      padding: 20px;
+      overflow-x: auto; /* Allow horizontal scrolling if necessary on small screens */
+    }
+    
     .cat {
-      height: 100px;
-      width: 100px;
+      background-color: antiquewhite;
+      border-radius: 50%;
+      height: 125px;
+      width: 125px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px;
+      flex-shrink: 0; /* Prevent the items from shrinking */
     }
-  }
-  
-  @media (max-width: 480px) {
-    .category {
-      flex-wrap: nowrap; /* Keep the circles in one row */
+    
+    .cat img {
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
-    .cat {
-      height: 80px;
-      width: 80px;
-      margin: 5px;
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .cat {
+        height: 100px;
+        width: 100px;
+      }
     }
-  }
-  
+    
+    @media (max-width: 480px) {
+      .category {
+        flex-wrap: nowrap; /* Keep the circles in one row */
+      }
+      .cat {
+        height: 80px;
+        width: 80px;
+        margin: 5px;
+      }
+    }
+    
