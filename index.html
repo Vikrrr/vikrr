@@ -23,6 +23,7 @@
         <button
           class="navbar-toggler"
           type="button"
+          id="hamburger"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
           aria-controls="navbarNav"
@@ -34,41 +35,45 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a
-                class="nav-link"
-                href="login.html"
-                style="
-                  font-size: 20px;
-                  font-weight: bold;
-                  color: rgb(255, 136, 0);
-                "
-                >Login</a
-              >
+              <a class="nav-link" href="login.html"
+                style="font-size: 20px; font-weight: bold; color: rgb(255, 136, 0);">Login</a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link"
-                href="vikrr.html"
-                style="
-                  font-size: 20px;
-                  font-weight: bold;
-                  color: rgb(255, 136, 0);
-                "
-                >Chat</a
-              >
+              <a class="nav-link" href="vikrr.html"
+                style="font-size: 20px; font-weight: bold; color: rgb(255, 136, 0);">Chat</a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link"
-                href="vikrr.html"
-                style="font-size: 20px; font-weight: bold"
-                ><i class="fa-solid fa-user"></i></a
-              >
+              <a class="nav-link" href="vikrr.html"
+                style="font-size: 20px; font-weight: bold"><i class="fa-solid fa-user"></i></a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
+    
+    <!-- Hamburger Sidebar Content -->
+    <div id="sidebar">
+      <ul>
+        <li>
+          <a href="login.html">
+            <i class="fas fa-sign-in-alt"></i> Login
+          </a>
+        </li>
+        <li>
+          <a href="vikrr.html">
+            <i class="fas fa-comments"></i> Chat
+          </a>
+        </li>
+        <li>
+          <a href="vikrr.html">
+            <i class="fas fa-user"></i> Profile
+          </a>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="overlay" id="overlay"></div>
+    
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -113,5 +118,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="app.js"></script>
   </body>
 </html>
