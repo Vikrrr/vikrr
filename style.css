@@ -144,8 +144,8 @@ body {
     .cat2 {
       background-color: antiquewhite;
       border-radius: 50%;
-      height: 125px;
-      width: 125px;
+      height: 80px;
+      width: 80px;
       display: flex;
       justify-content: center;
       align-items: center;
