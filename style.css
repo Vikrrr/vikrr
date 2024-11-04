@@ -125,15 +125,14 @@ body {
       justify-content: space-evenly;
       padding: 20px;
       overflow-x: auto; /* Allow horizontal scrolling on small screens */
-      overflow-y: hidden;
       scroll-behavior: smooth;
     }
     
     .cat {
       background-color: antiquewhite;
       border-radius: 50%;
-      height: 125px;
-      width: 125px;
+      height: 80px;
+      width: 80px;
       display: flex;
       justify-content: center;
       align-items: center;
