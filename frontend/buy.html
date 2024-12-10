@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buy Page</title>
+  <link rel="stylesheet" href="buy.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a href=""><img src="logo.png" alt="Logo" class="logo"></a>
+      <a href=""> <img src="Vikrr.png" alt="Logo" class="vikrr"></a>
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search..." class="search-input">
+      <button class="search-button">Search</button>
+    </div>
+    <ul class="navbar-links">
+      <li><a href="login.html">Login</a></li>
+      <li><a href="chat.html">Chat</a></li>
+      <li><a href="profile.html">Profile</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <div class="sidebar">
+      <h3>Categories</h3>
+      <ul>
+        <li><a href="#" onclick="displayProducts('Electronics')">Electronics</a></li>
+        <li><a href="#" onclick="displayProducts('Fashion')">Fashion</a></li>
+        <li><a href="#" onclick="displayProducts('Home & Furniture')">Home & Furniture</a></li>
+        <li><a href="#" onclick="displayProducts('Books')">Books</a></li>
+        <li><a href="#" onclick="displayProducts('Beauty & Personal Care')">Beauty & Personal Care</a></li>
+      </ul>
+    </div>
+
+    <div class="main-content">
+      <h1>Featured Products</h1>
+      <div id="product-grid" class="product-grid">
+        <!-- Products will be dynamically inserted here -->
+      </div>
+
+      <!-- Product Detail View -->
+      <div id="product-detail-view" style="display:none;">
+        <button class="back-button" onclick="goBack()">←</button>
+        <div id="product-image"></div>
+        <div id="product-info"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="buy.js"></script>
+</body>
+</html>
