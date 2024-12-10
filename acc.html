@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Page</title>
+    <link rel="stylesheet" href="acc.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script defer src="acc.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="navbar-brand">
+            <a href=""><img src="logo.png" alt="Logo" class="logo"></a>
+            <a href=""> <img src="Vikrr.png" alt="Logo" class="vikrr"></a>
+          </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search..." class="search-input">
+            <button class="search-button">Search</button>
+          </div>
+        <div class="user-section">
+            <span><i class="fa-solid fa-user"></i></span>
+        </div>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile-info">
+                <img src="" >
+                <p>Hello, Username</p>
+            </div>
+            <ul class="menu">
+                <li><a href="#" data-page="profile">Profile</a></li>
+                <li><a href="#" data-page="chat">Chat</a></li>
+                <li><a href="#" data-page="sell">Sell</a></li>
+                <li><a href="#" data-page="preorders">Pre Orders</a></li>
+                <li><a href="#" data-page="settings">Settings</a></li>
+                <li><a href="#" data-page="queries">Queries</a></li>
+                <a href="#" data-page="logout" style="padding-top: 20px;"><pre>logout  <i class="fa-solid fa-right-from-bracket"></i></pre></a>
+
+            </ul>
+        </aside>
+
+        <main class="main-content" id="main-content">
+            <div class="personal-info">
+                <h2>Personal Information</h2>
+                <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" value="Vvvvvvvv">
+                </div>
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" value="Vvv">
+                </div>
+                <div class="form-group">
+                    <label>Your Gender</label>
+                    <input type="radio" name="gender"> Male
+                    <input type="radio" name="gender"> Female
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" value="">
+                    <a href="#">Edit</a>
+                </div>
+                <div class="form-group">
+                    <label>Mobile Number</label>
+                    <input type="tel" value="+917899921042">
+                    <a href="#">Edit</a>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

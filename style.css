@@ -1,0 +1,367 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color:#bed5b9;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: 70px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+}
+.vikrr{
+  padding-top: 5px;
+  margin-left: 10px;;
+  height: 40px;
+  width: 125px;
+  margin-right: 10px;
+}
+
+
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-grow: 1;
+  max-width: 500px;
+  margin: 0 20px;
+}
+
+.search-input {
+  flex-grow: 1;
+  padding: 5px 10px;
+  font-size: 16px;
+  border: 2px solid black;
+  border-radius: 4px;
+}
+
+.search-button {
+  padding: 5px 15px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #ce6cb6;
+  border:2px black solid;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: rgb(200, 100, 0);
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  display: inline-block;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
+
+.navbar-links a:hover {
+  color: rgb(200, 100, 0);
+}
+
+
+  .navbar-nav li a {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  #vikrrlogo{
+    height: 100px;
+    background-size: cover;
+  }
+
+  /* Sidebar for mobile view (hamburger) */
+  #sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 150px;
+    background-color: #f8f9fa;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.3s ease;
+    padding-top: 60px;
+    height: auto;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+  
+  #sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #sidebar ul li {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  #sidebar ul li a {
+    color: #ff8800;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  #sidebar ul li a i {
+    margin-right: 10px; /* Add spacing between icon and text */
+  }
+  
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+  
+  /* Media Query for mobile */
+  @media (max-width: 999px) {
+    .navbar-collapse {
+      display: none;
+    }
+  
+    #hamburger {
+      display: block;
+      z-index: 2;
+    }
+  
+    #sidebar {
+      z-index: 3;
+    }
+  
+    /* Show icons only in the hamburger menu */
+    #sidebar ul li a i {
+      display: inline;
+    }
+  }
+  
+  @media (min-width: 1000px) {
+    #hamburger {
+      display: none;
+    }
+  
+    .navbar-collapse {
+      display: flex !important;
+    }
+  
+    #sidebar {
+      display: none;
+    }
+  
+    /* Hide icons for Login and Chat in desktop */
+    .navbar-nav li a i {
+      display: none;
+    }
+  
+    /* Show only the Profile icon in desktop */
+    .navbar-nav li:last-child a i {
+      display: inline;
+    }
+  }
+  
+  .carousel-item img {
+    height: 250px; 
+    margin-top: 10px;/* Height for PC */
+     /* Ensures the image covers the entire area */
+  }
+  
+  /* Responsive height for mobile */
+  @media (max-width: 576px) {
+    .carousel-item img {
+        height: 150px; /* Height for mobile */
+    }
+  }
+  .category {
+      display: flex;
+      flex-wrap: nowrap; /* Ensure all items are on the same row */
+      justify-content: space-evenly;
+      padding: 20px;
+      overflow-x: auto; /* Allow horizontal scrolling on small screens */
+      overflow-y: hidden;
+      scroll-behavior: smooth;
+    }
+  .category2 {
+      display: flex;
+      flex-wrap: nowrap; /* Ensure all items are on the same row */
+      justify-content: space-evenly;
+      padding: 20px;
+      overflow-x: auto; /* Allow horizontal scrolling on small screens */
+      scroll-behavior: smooth;
+    }
+    
+    .cat {
+      background-color:orange;
+      border-radius: 50%;
+      height: 80px;
+      width: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px;
+      flex-shrink: 0; /* Prevent the items from shrinking */
+      box-sizing: border-box;
+    }
+    .cat2 {
+      background-color:orange;
+      border-radius: 50%;
+      height: 80px;
+      width: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px;
+      flex-shrink: 0; /* Prevent the items from shrinking */
+      box-sizing: border-box;
+    }
+    .cat img {
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .cat2 img {
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .cat {
+        height: 100px;
+        width: 100px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .category {
+        flex-wrap: nowrap; /* Keep the circles in one row */
+      }
+      .cat {
+        height: 80px;
+        width: 80px;
+        margin: 5px;
+      }
+    }
+
+
+  /* Footer General Styling */
+.footer {
+  background-color: #f1f1f1;
+  padding: 20px 0;
+}
+#mailus{
+  border-left: #333 20px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex: 1 1 20%;
+  padding: 20px;
+}
+
+.footer-section h4 {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.footer-section ul li a:hover {
+  color: #007bff;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+ 
+}
+
+.social-icons a i {
+  width: 24px;
+  
+}
+
+/* Footer Bottom Styling */
+.footer-bottom {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.footer-bottom p a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-bottom p a:hover {
+  text-decoration: underline;
+}
+    
+.about{
+  height: 200px;
+  padding: 5px;
+  margin:10px;
+  background-color:antiquewhite;
+  border-radius: 10px;
+}
