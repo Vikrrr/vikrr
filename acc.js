@@ -181,7 +181,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const pages = {
         profile: async () => await fetchProfileData(),
         chat: async () => await fetchRecentChats(),
-        sell: () => sellPageContent,
+        sell: () => {
+            window.location.href = 'public/sell.html';
+            return '';
+        },
         preorders: async () => await fetchPreOrders(),
         settings: () => settingsPageContent,
         queries: () => queriesPageContent,
@@ -205,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     mainContent.innerHTML = await fetchProfileData();
                     break;
                 case 'sell':
-                    window.location.href = 'sell.html';
+                    window.location.href = 'public/sell.html';
                     break;
                 // ... other cases
             }
