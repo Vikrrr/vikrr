@@ -1,54 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DETAILS</title>
-  <link rel="stylesheet" href="done.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="done.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="navbar-brand">
-          <a href=""><img src="logo.png" alt="Logo" class="logo"></a>
-          <a href=""> <img src="Vikrr.png" alt="Logo" class="vikrr"></a>
+            <a href=""><img src="logo.png" alt="Logo" class="logo"></a>
+            <a href=""> <img src="Vikrr.png" alt="Logo" class="vikrr"></a>
         </div>
         <div class="search-bar">
-          <input type="text" placeholder="Search..." class="search-input">
-          <button class="search-button">Search</button>
+            <input type="text" placeholder="Search..." class="search-input">
+            <button class="search-button">Search</button>
         </div>
         <ul class="navbar-links">
-          <li><a href="login.html">Login</a></li>
-          <li><a href="chat.html">Chat</a></li>
-          <li><a href="acc.html">Profile</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="chat.html">Chat</a></li>
+            <li><a href="acc.html">Profile</a></li>
         </ul>
-      </nav>
-  <div class="container">
-    <!-- Left Section -->
-    <div class="left-section">
-      <h1>Product Details</h1>
-      <ul class="steps">
-        <li class="active"></li>
-      </ul>
+    </nav>
+
+    <div class="container">
+        <div class="left-section">
+            <div class="product-image">
+                <img id="productImage" src="" alt="Product Image">
+            </div>
+            <div class="product-thumbnails" id="productThumbnails">
+                <!-- Thumbnails will be added here -->
+            </div>
+        </div>
+
+        <div class="right-section">
+            <h1 id="productName"></h1>
+            <div class="product-info">
+                <div class="info-row">
+                    <i class="fas fa-tag"></i>
+                    <span>Category: </span>
+                    <span id="productCategory"></span>
+                </div>
+                <div class="info-row">
+                    <i class="fas fa-info-circle"></i>
+                    <span>Description: </span>
+                    <p id="productDescription"></p>
+                </div>
+                <div class="info-row">
+                    <i class="fas fa-user"></i>
+                    <span>Seller: </span>
+                    <span id="sellerName"></span>
+                </div>
+                <div class="info-row">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Location: </span>
+                    <span id="location"></span>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="chat-button">
+                    <i class="fas fa-comments"></i>
+                    Chat with Seller
+                </button>
+                <button class="mark-sold-button" id="markSoldButton">
+                    <i class="fas fa-check-circle"></i>
+                    Mark as Sold
+                </button>
+            </div>
+        </div>
     </div>
 
-    <!-- Right Section -->
-    <div class="right-section">
-      <h2>Role : </h2>
-      <div class="role-selection">
-        <div class="role buyer">
-          <img src="buyer-icon.png" alt="Buyer">
-          <p>BUYER</p>
-          <span>I want to buy products</span>
+    <!-- Confirmation Modal -->
+    <div class="modal" id="confirmationModal">
+        <div class="modal-content">
+            <h2>Confirm Sale</h2>
+            <p>Are you sure you want to mark this item as sold?</p>
+            <div class="modal-buttons">
+                <button class="confirm-button" id="confirmSale">Yes, Confirm</button>
+                <button class="cancel-button" id="cancelSale">Cancel</button>
+            </div>
         </div>
-        <div class="role seller">
-          <img src="seller-icon.png" alt="Seller">
-          <p>SELLER</p>
-          <span>I want to sell my products</span>
-        </div>
-      </div>
     </div>
-  </div>
 
-  <script src="script.js"></script>
+    <script src="done.js"></script>
 </body>
 </html>
