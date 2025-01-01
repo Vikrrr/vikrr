@@ -1,0 +1,304 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f3f6;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #bed5b9;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 70px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+}
+
+.vikrr {
+    padding-top: 5px;
+    margin-left: 10px;
+    height: 40px;
+    width: 125px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-grow: 1;
+    max-width: 500px;
+    margin: 0 20px;
+}
+
+.search-input {
+    flex-grow: 1;
+    padding: 8px 15px;
+    border: 2px solid #000;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.search-button {
+    padding: 8px 20px;
+    background: #ce6cb6;
+    color: white;
+    border: 2px solid #000;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.user-section {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Sell Container Styles */
+.sell-container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.sell-container h1 {
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.sell-form {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Image Upload Section */
+.image-upload-section {
+    margin-bottom: 30px;
+}
+
+.image-upload-section h2 {
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.image-upload-box {
+    position: relative;
+    height: 200px;
+    border: 2px dashed #bed5b9;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+    overflow: hidden;
+}
+
+.image-upload-box:hover {
+    border-color: #9fc198;
+    background-color: #f0f2f0;
+}
+
+.file-input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.image-upload-box i {
+    font-size: 32px;
+    color: #bed5b9;
+    margin-bottom: 10px;
+    z-index: 1;
+}
+
+.image-upload-box span {
+    color: #666;
+    font-size: 14px;
+    text-align: center;
+    padding: 0 10px;
+    z-index: 1;
+}
+
+.preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+/* Add loading state */
+.image-upload-box.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.image-upload-box.loading::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 3px solid #bed5b9;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.image-hint {
+    color: #666;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #444;
+    font-weight: 500;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.preview-btn, .submit-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.preview-btn {
+    background: #f0f0f0;
+    color: #333;
+}
+
+.submit-btn {
+    background: #bed5b9;
+    color: #333;
+    font-weight: bold;
+    flex: 1;
+}
+
+.preview-btn:hover {
+    background: #e4e4e4;
+}
+
+.submit-btn:hover {
+    background: #9fc198;
+}
+
+/* Add these styles for the success message */
+.success-message {
+    background-color: #bed5b9;
+    color: #333;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: slideDown 0.3s ease-out;
+}
+
+.success-message i {
+    font-size: 24px;
+    color: #333;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Add smooth transitions for image preview resets */
+.image-upload-box .preview {
+    transition: background-image 0.3s ease;
+}
+
+.image-upload-box i,
+.image-upload-box span {
+    transition: display 0.3s ease;
+} 
