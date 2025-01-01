@@ -8,27 +8,38 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch('/api/profile');
             const profile = await response.json();
             return `
-                <h2>Profile Information</h2>
-                <div class="form-group">
-                    <label>First Name</label>
-                    <input type="text" value="${profile.firstName}">
-                </div>
-                <div class="form-group">
-                    <label>Last Name</label>
-                    <input type="text" value="${profile.lastName}">
-                </div>
-                <div class="form-group">
-                    <label>Your Gender</label>
-                    <input type="radio" name="gender" ${profile.gender === 'Male' ? 'checked' : ''}> Male
-                    <input type="radio" name="gender" ${profile.gender === 'Female' ? 'checked' : ''}> Female
-                </div>
-                <div class="form-group">
-                    <label>Email Address</label>
-                    <input type="email" value="${profile.email}">
-                </div>
-                <div class="form-group">
-                    <label>Mobile Number</label>
-                    <input type="tel" value="${profile.mobile}">
+                <div class="profile-container">
+                    <div class="profile-header">
+                        <div class="profile-image-container">
+                            <img src="${profile.profileImage || 'default-avatar.png'}" alt="Profile" id="profile-image">
+                            <button class="change-photo-btn" id="change-photo-btn">
+                                <i class="fa-solid fa-camera"></i>
+                            </button>
+                        </div>
+                        <h2>Profile Information</h2>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" id="username" value="${profile.username}">
+                        <button class="edit-btn" data-field="username">Edit</button>
+                    </div>
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" id="firstName" value="${profile.firstName}">
+                        <button class="edit-btn" data-field="firstName">Edit</button>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" id="lastName" value="${profile.lastName}">
+                        <button class="edit-btn" data-field="firstName">Edit</button>
+                    </div>
+                    <div class="form-group">
+                        <label>Mobile Number</label>
+                        <input type="tel" id="mobile" value="${profile.mobile}">
+                        <button class="edit-btn" data-field="mobile">Edit</button>
+                    </div>
+                    <button class="save-profile-btn">Save Changes</button>
                 </div>
             `;
         } catch (error) {
@@ -55,35 +66,78 @@ document.addEventListener('DOMContentLoaded', () => {
     // Sell Page Content
     const sellPageContent = `
         <div class="sell-page">
-            <!-- Product Card Section -->
-            <div class="product-card">
-                <h3>Product Card</h3>
-                <div id="product-details">
-                    <p>No product details yet.</p>
+            <h2 class="sell-title">List Your Product</h2>
+            
+            <!-- Product Upload Form -->
+            <div class="product-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Product Name</label>
+                        <input type="text" id="product-name" placeholder="Enter product name">
+                    </div>
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select id="category">
+                            <option value="">Select Category</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="books">Books</option>
+                            <option value="furniture">Furniture</option>
+                            <option value="clothing">Clothing</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Price (₹)</label>
+                        <input type="number" id="price" placeholder="Enter price">
+                    </div>
+                    <div class="form-group">
+                        <label>Mode</label>
+                        <select id="mode">
+                            <option value="sell">Sell</option>
+                            <option value="rent">Rent</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Image Upload Section -->
+                <div class="image-upload-section">
+                    <label>Product Images</label>
+                    <div class="image-upload-grid">
+                        <div class="upload-box" id="image-preview-1">
+                            <i class="fas fa-plus"></i>
+                            <span>Add Image</span>
+                        </div>
+                        <div class="upload-box" id="image-preview-2">
+                            <i class="fas fa-plus"></i>
+                            <span>Add Image</span>
+                        </div>
+                        <div class="upload-box" id="image-preview-3">
+                            <i class="fas fa-plus"></i>
+                            <span>Add Image</span>
+                        </div>
+                    </div>
+                    <p class="image-hint">Upload up to 3 images (Max 5MB each)</p>
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="description" rows="4" placeholder="Describe your product..."></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="preview-btn">Preview</button>
+                    <button type="button" id="submit-product" class="submit-btn">List Product</button>
                 </div>
             </div>
 
-            <!-- Input Form Section -->
-            <div class="form-section">
-                <!-- Placeholders -->
-                <div class="placeholders">
-                    <input type="select" id="category" placeholder="Category">
-                    
-                    <input type="text" id="mode" placeholder="Mode (Buy/Rent)">
-                </div>
-                <div class="product-card"> <h3>upload image</h3></div>
-
-                <!-- Image Preview Section -->
-                <div class="image-preview">
-                    <div class="diamond" id="image-preview-1">I</div>
-                    <div class="diamond" id="image-preview-2">M</div>
-                    <div class="diamond" id="image-preview-3">G</div>
-                </div>
-
-                <!-- Description and Submit -->
-                <div class="description-box">
-                    <textarea id="description" rows="4" placeholder="Product Description..."></textarea>
-                    <button type="button" id="submit-product">Submit</button>
+            <!-- Preview Section -->
+            <div class="product-preview" id="product-details">
+                <h3>Product Preview</h3>
+                <div class="preview-content">
+                    <p>Your product listing will appear here</p>
                 </div>
             </div>
         </div>
@@ -138,8 +192,23 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', async (event) => {
             event.preventDefault();
             const page = link.getAttribute('data-page');
-            const pageContent = typeof pages[page] === 'function' ? await pages[page]() : `<p>Page not found.</p>`;
-            mainContent.innerHTML = pageContent;
+            
+            // Add special handling for chat option
+            if (page === 'chat') {
+                window.location.href = 'chat.html'; // Redirect to chat page
+                return;
+            }
+
+            // Rest of your existing menu handling code...
+            switch (page) {
+                case 'profile':
+                    mainContent.innerHTML = await fetchProfileData();
+                    break;
+                case 'sell':
+                    window.location.href = 'sell.html';
+                    break;
+                // ... other cases
+            }
 
             // Additional JavaScript for specific pages
             if (page === 'sell') {
@@ -191,6 +260,88 @@ document.addEventListener('DOMContentLoaded', () => {
                     document.body.classList.toggle('dark-mode', darkModeToggle.checked);
                 });
             }
+
+            if (page === 'profile') {
+                // Handle profile image upload
+                const changePhotoBtn = document.getElementById('change-photo-btn');
+                const profileImage = document.getElementById('profile-image');
+                
+                changePhotoBtn.addEventListener('click', () => {
+                    const fileInput = document.createElement('input');
+                    fileInput.type = 'file';
+                    fileInput.accept = 'image/*';
+                    fileInput.click();
+                    
+                    fileInput.onchange = async (e) => {
+                        const file = e.target.files[0];
+                        if (file) {
+                            const reader = new FileReader();
+                            reader.onload = (e) => {
+                                profileImage.src = e.target.result;
+                            };
+                            reader.readAsDataURL(file);
+                            
+                            // Upload image to server
+                            const formData = new FormData();
+                            formData.append('profileImage', file);
+                            
+                            try {
+                                const response = await fetch('/api/profile/image', {
+                                    method: 'POST',
+                                    body: formData
+                                });
+                                if (!response.ok) throw new Error('Failed to upload image');
+                            } catch (error) {
+                                alert('Failed to upload image');
+                            }
+                        }
+                    };
+                });
+
+                // Handle edit buttons
+                const editButtons = document.querySelectorAll('.edit-btn');
+                editButtons.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const field = btn.dataset.field;
+                        const input = document.getElementById(field);
+                        input.removeAttribute('readonly');
+                        input.focus();
+                    });
+                });
+
+                // Handle save changes
+                const saveBtn = document.querySelector('.save-profile-btn');
+                saveBtn.addEventListener('click', async () => {
+                    const updatedProfile = {
+                        username: document.getElementById('username').value,
+                        firstName: document.getElementById('firstName').value,
+                        lastName: document.getElementById('lastName').value,
+                        mobile: document.getElementById('mobile').value
+                    };
+
+                    try {
+                        const response = await fetch('/api/profile', {
+                            method: 'PUT',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(updatedProfile)
+                        });
+
+                        if (!response.ok) throw new Error('Failed to update profile');
+                        alert('Profile updated successfully!');
+                    } catch (error) {
+                        alert('Failed to update profile');
+                    }
+                });
+            }
         });
     });
+
+    // Add this function to handle chat notifications
+    function updateChatNotifications() {
+        const chatLink = document.querySelector('a[data-page="chat"]');
+        // You can add a notification counter if needed
+        // chatLink.innerHTML = `Chat <span class="notification-badge">2</span>`;
+    }
 });

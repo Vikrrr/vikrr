@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Your Item - Vikrr</title>
+    <link rel="stylesheet" href="sell.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="navbar-brand">
+            <a href="index.html"><img src="logo.png" alt="Logo" class="logo"></a>
+            <a href="index.html"><img src="Vikrr.png" alt="Logo" class="vikrr"></a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search..." class="search-input">
+            <button class="search-button">Search</button>
+        </div>
+        <div class="user-section">
+            <a href="acc.html"><i class="fa-solid fa-user"></i></a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="sell-container">
+        <div class="sell-header">
+            <h1>List Your Item for Sale</h1>
+            <p>Fill in the details below to list your item</p>
+        </div>
+        
+        <form id="sell-form" class="sell-form">
+            <!-- Image Upload Section -->
+            <div class="image-upload-section">
+                <h2>Product Images</h2>
+                <p class="section-desc">Add up to 3 images of your item</p>
+                <div class="image-grid">
+                    <div class="image-upload-box" id="upload-box-1">
+                        <input type="file" accept="image/*" class="file-input" id="file-1">
+                        <i class="fas fa-plus"></i>
+                        <span>Main Image*</span>
+                        <div class="preview"></div>
+                    </div>
+                    <div class="image-upload-box" id="upload-box-2">
+                        <input type="file" accept="image/*" class="file-input" id="file-2">
+                        <i class="fas fa-plus"></i>
+                        <span>Additional Image</span>
+                        <div class="preview"></div>
+                    </div>
+                    <div class="image-upload-box" id="upload-box-3">
+                        <input type="file" accept="image/*" class="file-input" id="file-3">
+                        <i class="fas fa-plus"></i>
+                        <span>Additional Image</span>
+                        <div class="preview"></div>
+                    </div>
+                </div>
+                <p class="image-hint">*Main image is required. Maximum file size: 5MB per image</p>
+            </div>
+
+            <!-- Product Details Section -->
+            <div class="product-details">
+                <h2>Item Details</h2>
+                
+                <div class="form-group">
+                    <label for="product-name">Product Name*</label>
+                    <input type="text" id="product-name" required placeholder="Enter a descriptive title">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="category">Category*</label>
+                        <select id="category" required>
+                            <option value="">Select Category</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="books">Books</option>
+                            <option value="furniture">Furniture</option>
+                            <option value="clothing">Clothing</option>
+                            <option value="sports">Sports Equipment</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="condition">Condition*</label>
+                        <select id="condition" required>
+                            <option value="">Select Condition</option>
+                            <option value="new">New</option>
+                            <option value="like-new">Like New</option>
+                            <option value="good">Good</option>
+                            <option value="fair">Fair</option>
+                            <option value="poor">Poor</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="price">Price (₹)*</label>
+                        <input type="number" id="price" required placeholder="Enter price">
+                    </div>
+                    <div class="form-group">
+                        <label for="negotiable">Price Type</label>
+                        <select id="negotiable">
+                            <option value="fixed">Fixed Price</option>
+                            <option value="negotiable">Negotiable</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description*</label>
+                    <textarea id="description" rows="5" required 
+                        placeholder="Describe your item in detail. Include information about:&#10;- Condition and age&#10;- Features and specifications&#10;- Reason for selling&#10;- Any defects or issues"></textarea>
+                </div>
+
+                <div class="contact-details">
+                    <h2>Contact Details</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contact-number">Contact Number*</label>
+                            <input type="tel" id="contact-number" required placeholder="Enter your mobile number">
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Location*</label>
+                            <input type="text" id="location" required placeholder="Enter your location">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="preview-btn">
+                        <i class="fas fa-eye"></i> Preview
+                    </button>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-check"></i> List Item
+                    </button>
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Vikrr. All rights reserved.</p>
+    </footer>
+
+    <script src="sell.js"></script>
+</body>
+</html> 
