@@ -205,6 +205,7 @@ body {
     }
   }
   .category {
+    background-color: white;
       display: flex;
       flex-wrap: nowrap; /* Ensure all items are on the same row */
       justify-content: space-evenly;
@@ -214,6 +215,7 @@ body {
       scroll-behavior: smooth;
     }
   .category2 {
+    background-color: white;
       display: flex;
       flex-wrap: nowrap; /* Ensure all items are on the same row */
       justify-content: space-evenly;
@@ -223,7 +225,7 @@ body {
     }
     
     .cat {
-      background-color:orange;
+      background-color:white;
       border-radius: 50%;
       height: 80px;
       width: 80px;
@@ -235,7 +237,7 @@ body {
       box-sizing: border-box;
     }
     .cat2 {
-      background-color:orange;
+      background-color:white;
       border-radius: 50%;
       height: 80px;
       width: 80px;
