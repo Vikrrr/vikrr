@@ -260,3 +260,21 @@
     color: #0d47a1;
   }
   
+  /* Add these styles to your existing buy.css */
+  .sidebar ul li a.active {
+    color: #2874f0;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
+  .sidebar ul li a {
+    display: block;
+    padding: 8px 0;
+    transition: all 0.3s ease;
+  }
+  
+  .sidebar ul li a:hover {
+    color: #2874f0;
+    padding-left: 5px;
+  }
+  
