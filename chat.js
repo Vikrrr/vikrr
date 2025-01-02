@@ -7,7 +7,7 @@ const currentUserPic = document.getElementById('current-user-pic');
 // Simulated chat data
 const chatData = {
     'Ajith koli': [
-        { sender: 'Ajith koli', message: 'Hey! How are you?', time: '10:00 AM' },
+        { sender: 'Amarjeeth HS', message: 'Hey! How are you?', time: '10:00 AM' },
         { sender: 'You', message: 'I am good, thanks!', time: '10:05 AM' },
     ],
     'Akash MS': [
