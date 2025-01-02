@@ -26,14 +26,7 @@ function loadChat(userName) {
     });
 
     // Simulate receiving new messages in real-time
-    setInterval(() => {
-        const randomSender = Math.random() > 0.5 ? 'Ajith koli' : 'Akash MS'; // Random sender
-        const newMessage = { sender: randomSender, message: `New message from ${randomSender}`, time: new Date().toLocaleTimeString() };
-        chatData[randomSender].push(newMessage);
-        if (currentUserName.textContent === randomSender) {
-            addMessage(newMessage.message, false); // Add new message
-        }
-    }, 5000); // New message every 5 seconds
+  
 }
 
 // Function to add a message to the chat box
