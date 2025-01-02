@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign Up / Sign In |vikrr</title>
+    <title>Sign Up / Sign In | Vikrr</title>
     <link rel="stylesheet" href="login.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -52,20 +53,19 @@
           <h2>Create your account</h2>
           <form action="/signup" method="POST">
             <div class="input-group">
-              <label for="email">Email address</label>
+              <label for="Student no">Student No</label>
               <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Enter your @rvce.edu.in email"
+                type="text"
+                id="Student no"
+                name="Student no"
+                placeholder="Enter your RVCE________"
                 required
               />
-              <small id="email-error" class="hidden" style="color: red"
-                >Please use your @rvce.edu.in email.</small
-              >
+              <small id="Student no" class="hidden" style="color: red">
+                Please enter your Student no 
+              </small>
             </div>
 
-            <!-- Auto-populated username based on email -->
             <div class="input-group">
               <label for="username">Username</label>
               <input
@@ -78,17 +78,17 @@
             </div>
 
             <div class="input-group">
-              <label for="mobile">Mobile Number:</label>
+              <label for="mobile">Mobile Number</label>
               <input
                 type="tel"
                 id="mobile"
                 name="mobile"
                 pattern="[0-9]{10}"
+                placeholder="Enter your 10-digit number"
                 required
               />
             </div>
 
-            <!-- Hosteler / Day Scholar Selection -->
             <div class="input-group">
               <label for="status">Are you a hosteler or a day scholar?</label>
               <select id="status" name="status" required>
@@ -98,7 +98,6 @@
               </select>
             </div>
 
-            <!-- Hostel Selection (Hidden by Default) -->
             <div class="input-group hidden" id="hostel-group">
               <label for="hostel">Select your hostel</label>
               <select id="hostel" name="hostel">
@@ -109,6 +108,7 @@
                 <option value="Hostel D">Sir MV</option>
               </select>
             </div>
+
             <div class="input-group">
               <label for="password">Password</label>
               <input
@@ -120,7 +120,6 @@
               />
             </div>
 
-            <!-- Re-enter Password (Hidden Initially) -->
             <div class="input-group hidden" id="reenter-password-group">
               <label for="reenter-password">Re-enter Password</label>
               <input
@@ -155,7 +154,7 @@
         </div>
       </div>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="login.js"></script>
   </body>
 </html>
